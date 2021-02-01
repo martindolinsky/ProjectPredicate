@@ -47,14 +47,14 @@ public class Main {
 			}
 		}
 
-		for (City c:cities) {
-			if (c.getCode() .equals("ITA") && c.getPopulation() > 300000)
+		for (City c : cities) {
+			if (c.getCode().equals("NLD") && c.getPopulation() > 100000)
 				System.out.println(c);
 		}
 
 		System.out.println("\n\n\n\n\n");
-		FromIta<String> predicateCode = new FromIta<>();
-		Predicate<City> moreThan1 = city -> city.getPopulation() > 300000;
+		FromNLD<String> predicateCode = new FromNLD<>();
+		Predicate<City> moreThan1 = city -> city.getPopulation() > 100000;
 		cities.stream().filter(predicateCode.and(moreThan1)).forEach(System.out::println);
 
 	}
